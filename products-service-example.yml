@@ -16,7 +16,7 @@ spec:
         app: products-service-example
     spec:
       containers:
-        - image: $container_images
+        - image: fmastra22/product-example:latest
           name: products-service
           ports:
             - containerPort: 8080
