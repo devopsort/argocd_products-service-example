@@ -23,15 +23,15 @@ spec:
               name: products-service-example 
               protocol: TCP
           env:
-          - name: APP_ARGS
-            valuefrom:
-              configMapKeyRef: 
-                name: map_products
-                key: APP_ARGS
-      resources:
-        limits:
-          memory: "128Mi"
-          cpu: "500m"
+            - name: APP_ARGS
+              valueFrom:
+                configMapKeyRef: 
+                  name: map_products
+                  key: APP_ARGS
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
 # strategy:
 #     type: RollingUpdate
 #     rollingUpdate:
