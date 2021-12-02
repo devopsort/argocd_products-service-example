@@ -4,9 +4,9 @@ metadata:
   labels:
     app: products-service-example
   name: products-service-example
-  namespace: 
+  namespace: default 
 spec:
-  replicas: 0
+  replicas: 1
   selector:
     matchLabels:
       app: products-service-example
@@ -16,18 +16,22 @@ spec:
         app: products-service-example
     spec:
       containers:
-      - name: products-service-example
-        image: <Image>
-        ports:
-        - containerPort: <Port>
-          name: 
-          protocol: 
-        env:
-          - 
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
+        - image: products-service-example
+          name: <imagen contenedor>
+          ports:
+            - containerPort: 8080
+              name: products-service-example 
+              protocol: TCP
+          env:
+          - name: APP_ARGS
+            valuefrom:
+              configMapKeyRef: 
+                name: map_products
+                key: APP_ARGS
+      resources:
+        limits:
+          memory: "128Mi"
+          cpu: "500m"
 # strategy:
 #     type: RollingUpdate
 #     rollingUpdate:
