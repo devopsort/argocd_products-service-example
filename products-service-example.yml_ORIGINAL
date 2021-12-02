@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - image: products-service-example
-          name: <imagen contenedor>
+          name: $container_images
           ports:
             - containerPort: 8080
               name: products-service-example 
