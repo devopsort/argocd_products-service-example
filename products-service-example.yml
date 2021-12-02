@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: products-service-example
+  name: products-service-example
+  namespace: default 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: products-service-example
+  template:
+    metadata:
+      labels:
+        app: products-service-example
+    spec:
+      containers:
+        - image: $container_images
+          name: products-service
+          ports:
+            - containerPort: 8080
+              name: products-service-example 
+              protocol: TCP
+          env:
+          - name: APP_ARGS
+            valuefrom:
+              configMapKeyRef: 
+                name: map_products
+                key: APP_ARGS
+      resources:
+        limits:
+          memory: "128Mi"
+          cpu: "500m"
+# strategy:
+#     type: RollingUpdate
+#     rollingUpdate:
+#       maxSurge: 25%
+#       maxUnavailable: 25%
+#   revisionHistoryLimit: 10
+#   progressDeadlineSeconds: 600
+#   paused: false            
+  
