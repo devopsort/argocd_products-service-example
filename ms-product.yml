@@ -16,7 +16,7 @@ spec:
         app: ms-product
     spec:
       containers:
-        - image: fmastra22/ms-product
+        - image: 473718918692.dkr.ecr.us-east-1.amazonaws.com/products-service:17_test
           name: products-service
           ports:
             - containerPort: 8080
