@@ -2,36 +2,36 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: products-service-example
-  name: products-service-example
+    app: ms-product
+  name: ms-product
   namespace: default 
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: products-service-example
+      app: ms-product
   template:
     metadata:
       labels:
-        app: products-service-example
+        app: ms-product
     spec:
       containers:
-        - image: $container_images
+        - image: 473718918692.dkr.ecr.us-east-1.amazonaws.com/products-service:17_test
           name: products-service
           ports:
             - containerPort: 8080
-              name: products-service-example 
+              name: ms-product 
               protocol: TCP
           env:
-          - name: APP_ARGS
-            valuefrom:
-              configMapKeyRef: 
-                name: map_products
-                key: APP_ARGS
-      resources:
-        limits:
-          memory: "128Mi"
-          cpu: "500m"
+            - name: APP_ARGS
+              valueFrom:
+                configMapKeyRef: 
+                  name: map.products
+                  key: APP_ARGS
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
 # strategy:
 #     type: RollingUpdate
 #     rollingUpdate:
