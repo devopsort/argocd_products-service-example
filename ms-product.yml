@@ -16,7 +16,7 @@ spec:
         app: ms-product
     spec:
       containers:
-        - image: fmastra22/product-example:latest
+        - image: fmastra22/ms-product
           name: products-service
           ports:
             - containerPort: 8080
