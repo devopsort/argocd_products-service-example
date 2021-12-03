@@ -6,7 +6,7 @@ metadata:
     name: oblingress
 spec:
   rules:
-  - host: *.amazonaws.com
+  - host: "*.amazonaws.com"
     http:
       paths:
       - pathType: Prefix
