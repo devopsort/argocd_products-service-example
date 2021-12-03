@@ -11,4 +11,4 @@ spec:
       - path: /ms-product
         backend:
           serviceName: ms-product-svc
-          servicePort: 8080
+          servicePort: 30002
