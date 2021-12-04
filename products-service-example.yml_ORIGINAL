@@ -16,7 +16,7 @@ spec:
         app: products-service-example
     spec:
       containers:
-        - image: 
+        - image: ${container_images}
           name: products-service
           ports:
             - containerPort: 8080
