@@ -16,7 +16,7 @@ spec:
         app: ms-product
     spec:
       containers:
-        - image: ${container_images}
+        - image: "${IMAGEN}"
           name: products-service
           ports:
             - containerPort: 8080
