@@ -1,14 +1,18 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress-msprod
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+  labels:
+    name: ingress-msprod
 spec:
   rules:
-  - http:
+  - host: ?
+    http:
       paths:
-      - path: /ms-product
+      - pathType: Prefix
+        path: "/ms-product"
         backend:
-          serviceName: ms-product-svc
-          servicePort: 30002
+          service:
+            name: ms-product-svc
+            port: 
+              number: 30002
