@@ -23,15 +23,15 @@ spec:
               name: ms-product 
               protocol: TCP
           env:
-          - name: APP_ARGS
-            valuefrom:
-              configMapKeyRef: 
-                name: map.products
-                key: APP_ARGS
-      resources:
-        limits:
-          memory: "128Mi"
-          cpu: "500m"
+            - name: APP_ARGS
+              valueFrom:
+                configMapKeyRef: 
+                  name: map.products
+                  key: APP_ARGS
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
 # strategy:
 #     type: RollingUpdate
 #     rollingUpdate:
@@ -39,4 +39,4 @@ spec:
 #       maxUnavailable: 25%
 #   revisionHistoryLimit: 10
 #   progressDeadlineSeconds: 600
-#   paused: false              
+#   paused: false            
