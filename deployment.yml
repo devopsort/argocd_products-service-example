@@ -16,7 +16,7 @@ spec:
         app: ms-product
     spec:
       containers:
-        - image: 407689691491.dkr.ecr.us-east-1.amazonaws.com/products-service:56_Test
+        - image: 407689691491.dkr.ecr.us-east-1.amazonaws.com/products-service:67_Test
           name: products-service
           ports:
             - containerPort: 8080
