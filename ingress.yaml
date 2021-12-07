@@ -9,7 +9,8 @@ spec:
   - host: ac16e5af9a71145dda7710f0e8bdf498-9e53106ef4134182.elb.us-east-1.amazonaws.com
     http:
       paths:
-        - path: /ms-product
-          backend:
-            serviceName: ms-product-svc
-            servicePort: 30002
+      - path: /ms-product
+        pathType: Prefix
+        backend:
+          serviceName: ms-product-svc
+          servicePort: 30002
