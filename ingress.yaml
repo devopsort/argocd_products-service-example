@@ -1,14 +1,15 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: test-ingress
+  name: ingress-msprod
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - http:
+  - host: ac16e5af9a71145dda7710f0e8bdf498-9e53106ef4134182.elb.us-east-1.amazonaws.com
+    http:
       paths:
-      - path: /ms-product
-        backend:
-          serviceName: ms-product-svc
-          servicePort: 30002
+        - path: /ms-product
+          backend:
+            serviceName: ms-product-svc
+            servicePort: 30002
