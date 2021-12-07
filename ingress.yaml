@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: ingress-msprod
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/rewrite-target: /ms-product
 spec:
   rules:
   - host: ac16e5af9a71145dda7710f0e8bdf498-9e53106ef4134182.elb.us-east-1.amazonaws.com
