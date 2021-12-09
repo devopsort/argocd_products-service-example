@@ -13,4 +13,4 @@ spec:
         pathType: Prefix
         backend:
           serviceName: ms-product-svc
-          servicePort: 30002
+          servicePort: 8080
